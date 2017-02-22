@@ -3,7 +3,7 @@ package com.yiran.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.yiran.constans.SysConstans.RETURN_SUCCESS;
+import static com.yiran.constans.SysConstant.RETURN_SUCCESS;
 
 /**
  * Created by Yiran on 17-1-23.

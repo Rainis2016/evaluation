@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="staffInfoPart">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">员工信息</div>
+        <div class="pull-right"><span class="badge badge-info">考核期2017年1月1日至12月31日</span>
+
+        </div>
+    </div>
+    <div class="block-content collapse in">
+        <table class="table table table-bordered">
+            <tbody>
+            <tr>
+                <td>姓名:</td>
+                <td id="username"><u></u></td>
+                <td>公司:</td>
+                <td id="branchName"><u></u></td>
+                <td>部门:</td>
+                <td id="dpName"><u></u></td>
+            </tr>
+            <tr>
+                <td>入职日期:</td>
+                <td id="entryDate"><u></u></td>
+                <td>对内职级:</td>
+                <td id="postTitle"><u></u></td>
+                <td>对外职称:</td>
+                <td id="professionTitle"><u></u></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

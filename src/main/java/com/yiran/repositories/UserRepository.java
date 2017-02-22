@@ -14,4 +14,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Long> {
     User findByUsername (String username);
     User findByWorkCode (String workCode);
+    List<User> findByBranchCode(String branchCode);
+    Long countByDpCode(String dpCode);
 }

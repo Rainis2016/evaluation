@@ -16,4 +16,6 @@ $(function() {
 	   	$('.hide-sidebar').show();
 	  	$('#sidebar').show('fast');
 	});
+
+    // $('textarea').wysihtml5();
 });

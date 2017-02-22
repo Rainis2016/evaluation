@@ -2,8 +2,6 @@ package com.yiran.result;
 
 
 
-import com.yiran.entities.Answer;
-import com.yiran.entities.BaseModel;
 import com.yiran.entities.ReturnInfo;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -15,12 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.yiran.constans.SysConstans.RETURN_FAIL;
-import static com.yiran.constans.SysConstans.RETURN_SUCCESS;
+import static com.yiran.constans.SysConstant.RETURN_FAIL;
+import static com.yiran.constans.SysConstant.RETURN_SUCCESS;
 
 /**
  * Created by Yiran on 17-1-23.

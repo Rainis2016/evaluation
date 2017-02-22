@@ -26,25 +26,32 @@ import java.util.List;
  */
 @Service
 public class UserService implements UserDetailsService {
-
     @Autowired
     private UserRepository userRepository;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        System.out.println("username=="+user.getUsername());
+        User user = userRepository.findByWorkCode(username);
         if (user == null) {
             throw new UsernameNotFoundException("user not found");
         }
         List<GrantedAuthority> auth = AuthorityUtils
-                .commaSeparatedStringToAuthorityList("ROLE_ADMIN");
+                .commaSeparatedStringToAuthorityList(user.getRole());
         String password = user.getPassword();
         return new org.springframework.security.core.userdetails.User(username, password,
                 auth);
     }
 
 
+    public User currentUser(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if(auth == null || auth instanceof AnonymousAuthenticationToken){
+            return null;
+        }
+        String workCode =((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername();
+        return userRepository.findByWorkCode(workCode);
+    }
+
 
 }
+

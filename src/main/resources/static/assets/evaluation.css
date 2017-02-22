@@ -1,0 +1,22 @@
+input {
+    border: hidden;
+    width: 100px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: inherit;
+
+}
+
+tr td {
+    vertical-align: middle !important;
+}
+
+.muted input, span input {
+    border-bottom: inset;
+}
+
+textarea {
+    width: 98%;
+    height: 200px;
+}

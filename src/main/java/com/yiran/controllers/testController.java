@@ -1,4 +1,4 @@
-package com.yiran.controller;
+package com.yiran.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

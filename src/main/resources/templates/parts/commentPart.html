@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="commentPart">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">主管&自我评论</div>
+        <div class="pull-right"><span class="badge badge-important">必填</span>
+
+        </div>
+    </div>
+    <div class="block-content collapse in">
+        <div>
+            <p>主管评论</p>
+            <textarea class="comment" id="leaderComment" placeholder="请输入内容..."></textarea>
+            <div>
+                <span class="offset8 span2">签字: <input id="leaderCommentSign"></span>
+                <span class="span2">日期: <input id="leaderCommentSignDate"></span>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div>
+            <p>员工评论</p>
+            <textarea id="staffComment" placeholder="请输入内容..."></textarea>
+            <div>
+                <span class="offset8 span2">签字: <input id="staffCommentSign"></span>
+                <span class="span2">日期: <input id="staffCommentSignDate"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

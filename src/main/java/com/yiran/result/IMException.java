@@ -5,7 +5,6 @@ package com.yiran.result;
  */
 public class IMException extends Exception{
 
-//    String ExceptionMessage+="["+className+"] "+"["+methodName+"] ";
     public IMException (String ExceptionMessage){
         super(ExceptionMessage);
     }

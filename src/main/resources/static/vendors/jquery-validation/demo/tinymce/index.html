@@ -18,7 +18,7 @@
 	});
 	$(function() {
 		var validator = $("#myform").submit(function() {
-			// update underlying textarea before submit validation
+			// update underlying textarea before submitPersonWf validation
 			tinyMCE.triggerSave();
 		}).validate({
 			ignore: "",
@@ -36,7 +36,7 @@
 			}
 		});
 		validator.focusInvalid = function() {
-			// put focus on tinymce on submit validation
+			// put focus on tinymce on submitPersonWf validation
 			if( this.settings.focusInvalid ) {
 				try {
 					var toFocus = $(this.findLastActive() || this.errorList.length && this.errorList[0].element || []);

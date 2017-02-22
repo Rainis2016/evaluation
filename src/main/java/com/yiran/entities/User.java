@@ -1,18 +1,15 @@
 package com.yiran.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Yiran on 17-1-16.
@@ -21,7 +18,7 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-public class User extends BaseModel {
+public class User extends BaseModel  {
 
     @NonNull
     private String username;
@@ -35,7 +32,18 @@ public class User extends BaseModel {
     @NonNull
     private String branchCode;
     @NonNull
+    private String branchName;
+    @NonNull
     private String dpCode;
+    @NonNull
+    private String dpName;
+    @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date entryDate;
+    @NonNull
+    private String postTitle;
+    @NonNull
+    private String professionTitle;
 
     public String toString() {
         return "{" +

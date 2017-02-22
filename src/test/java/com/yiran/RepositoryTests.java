@@ -2,14 +2,14 @@ package com.yiran;
 
 import com.yiran.entities.*;
 import com.yiran.repositories.*;
-import org.junit.Assert;
+import com.yiran.workflow.repositories.HistoryTaskRepository;
+import com.yiran.workflow.repositories.RunningTaskRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -55,9 +55,28 @@ public class RepositoryTests {
     }
 
     @Autowired
-    private ExaminationRepository examinationRepository;
+    private EvaluationRepository examinationRepository;
     @Test
     public void examinationRepositoryTest(){
-        List<Examination> list = examinationRepository.findAll();
+        List<Evaluation> list = examinationRepository.findAll();
     }
+
+    @Test
+    public void updateAnswerTest(){
+
+    }
+
+//    @Autowired
+//    private RunningTaskRepository runningTaskRepository;
+//    @Test
+//    public void runningTaskRepositoryTest(){
+//        runningTaskRepository.findAll();
+//    }
+//
+//    @Autowired
+//    private HistoryTaskRepository historyTaskRepository;
+//    @Test
+//    public void historyTaskRepositoryTest(){
+//        historyTaskRepository.findAll();
+//    }
 }

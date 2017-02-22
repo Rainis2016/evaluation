@@ -39,7 +39,7 @@ $(document).ready(function() {
 	});
 
 
-	// validate signup form on keyup and submit
+	// validate signup form on keyup and submitPersonWf
 	var validator = $("#signupform").validate({
 		rules: {
 			firstname: "required",
@@ -100,7 +100,7 @@ $(document).ready(function() {
 			else
 				error.appendTo( element.parent().next() );
 		},
-		// specifying a submitHandler prevents the default submit, good for the demo
+		// specifying a submitHandler prevents the default submitPersonWf, good for the demo
 		submitHandler: function() {
 			alert("submitted!");
 		},

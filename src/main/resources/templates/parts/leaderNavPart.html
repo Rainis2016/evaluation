@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="leaderNavPart">
+    <div class="navbar navbar-fixed-top container-fluid">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">考核系统</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i
+                                    class="icon-user"></i><span th:text="${username}" th:name="${workCode}"
+                                                                class="workCode">Username</span><i class="caret"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!--<li>-->
+                                <!--<a tabindex="-1" href="#">个人信息</a>-->
+                                <!--</li>-->
+                                <li class="divider"></li>
+                                <li>
+                                    <a tabindex="-1" th:href="@{/logout}" href="/logout">登出</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">分公司<i
+                                    class="caret"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="active">`
+                                    <a href="#" class="branchCode active" name="S004">深圳分公司</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">部门考核<i
+                                    class="caret"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="active">`
+                                    <a href="#" class="dpCode active" name="S004">IT部门</a>
+                                </li>
+                                <li>
+                                    <a href="#">行政部门</a>
+                                </li>
+                                <li>
+                                    <a href="#">账务部门</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">考核年份<i
+                                    class="caret"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="active currentYear">`
+                                    <a href="#"><span class="year active">2017</span>年(当前年)</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#"><span class="year">2016</span>年(已考核)</a>
+                                </li>
+                                <li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="alert " hidden="true">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4 class="text-center msg"></h4>
+        </div>
+    </div>
+</div>
+</body>
+</html>

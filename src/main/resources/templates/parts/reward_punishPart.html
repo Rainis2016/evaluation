@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="reward_punishPart">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">主管&HR奖惩意见</div>
+        <div class="pull-right"><span class="badge badge-warning">选填</span>
+
+        </div>
+    </div>
+    <div class="block-content collapse in">
+        <div>
+            <p>主管奖惩意见</p>
+            <textarea id="leaderReward_Punish" placeholder="请输入内容..."></textarea>
+            <div>
+                <span class="offset8 span2">签字: <input id="leaderReward_PunishSign"></span>
+                <span class="span2">日期: <input id="leaderReward_PunishSignDate"></span>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div>
+            <p>HR奖惩意见</p>
+            <textarea id="hrReward_Punish" placeholder="请输入内容..."></textarea>
+            <div>
+                <span class="offset8 span2">签字: <input id="hrReward_PunishSign"></span>
+                <span class="span2">日期: <input id="hrReward_PunishSignDate"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

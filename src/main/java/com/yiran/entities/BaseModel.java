@@ -3,6 +3,7 @@ package com.yiran.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.Date;
 @MappedSuperclass
 @Getter
 @Setter
+@ToString
 public class BaseModel implements Comparable<BaseModel>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

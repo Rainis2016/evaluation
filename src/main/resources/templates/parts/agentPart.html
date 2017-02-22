@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>考核系统-首页</title>
+    <link rel="stylesheet" type="text/css" href="../../static/vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css"></link>
+    <!-- Bootstrap -->
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../../static/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+    <link href="../../static/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="../../static/assets/evaluation.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!--<style>-->
+        <!--input {-->
+            <!--border: hidden;-->
+            <!--width: 100px;-->
+            <!--padding: 0px;-->
+            <!--margin: 0px;-->
+            <!--text-align: center;-->
+            <!--background-color: inherit;-->
+
+        <!--}-->
+
+        <!--tr td {-->
+            <!--vertical-align: middle !important;-->
+        <!--}-->
+
+        <!--.muted input, span input {-->
+            <!--border-bottom: inset;-->
+        <!--}-->
+
+        <!--textarea {-->
+            <!--width: 98%;-->
+            <!--height: 200px;-->
+        <!--}-->
+    <!--</style>-->
+</head>
+
+<body>
+<div class="navbar navbar-fixed-top container">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">考核系统</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i
+                                class="icon-user"></i><span  th:text="${username}" th:name="${workCode}" class="workCode">Username</span><i class="caret"></i>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a tabindex="-1" href="#">个人信息</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a tabindex="-1" th:href="@{/logout}" href="/logout">登出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">个人考核</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">考核年份<i
+                                class="caret"></i>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="active currentYear">`
+                                <a href="#"><span class="year">2017</span>年(当前年)</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">2016年（已考核）</a>
+                            </li>
+                            <li>
+                                <a href="#">2018年</a>
+                            </li>
+                            <li>
+                                <a href="#">2019年</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="alert " hidden="true">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="text-center msg"></h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row-fluid">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">员工信息</div>
+                <div class="pull-right"><span class="badge badge-info">考核期2017年1月1日至12月31日</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <table class="table table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td>姓名:</td>
+                        <td id="username"><u></u></td>
+                        <td>公司:</td>
+                        <td id="branchName"><u></u></td>
+                        <td>部门:</td>
+                        <td id="dpName"><u></u></td>
+                    </tr>
+                    <tr>
+                        <td>入职日期:</td>
+                        <td id="entryDate"><u></u></td>
+                        <td>对内职级:</td>
+                        <td id="postTitle"><u></u></td>
+                        <td>对外职称:</td>
+                        <td id="professionTitle"><u></u></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /block -->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">自我评价</div>
+                <div class="pull-right"><span class="badge badge-important">必填</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <div>
+                    <p>问题1?</p>
+                    <textarea placeholder="请输入内容..." id="answer1"></textarea>
+                </div>
+                <hr>
+                <div>
+                    <p>问题2?</p>
+                    <textarea placeholder="请输入内容..." id="answer2"></textarea>
+                </div>
+                <hr>
+                <div>
+                    <p>问题3?</p>
+                    <textarea placeholder="请输入内容..." id="answer3"></textarea>
+                </div>
+                <hr>
+                <div>
+                    <p>问题4?</p>
+                    <textarea placeholder="请输入内容..." id="answer4"></textarea>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <!--/block-->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left"><p>业务考核 (权重: <input class="input-mini focused" value="100">%)</p>
+                </div>
+                <div class="pull-right"><span class="badge badge-important">必填</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <table class="table table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#考评项目</td>
+                        <td><input value="指标完成率"></td>
+                        <td><input value="总权重(%)"></td>
+                        <td><input value="部门主管评分"></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>考核保费指标完成率</td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <td>网点活动率</td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <td>期缴保费</td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <hr>
+                <table class="table table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#考评项目</td>
+                        <td><input value="实际完成值"></td>
+                        <td><input value="指标完成率(%)"></td>
+                        <td><input value="总权重(%)"></td>
+                        <td><input value="部门主管评分"></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td rowspan="2">保费指标</td>
+                        <td>考核期个人或团队考核保费计划数</td>
+                        <td><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <!--<td>保费指标</td>-->
+                        <td>考核期个人或团队考核保费实际完成数</td>
+                        <td><input value="100"></td>
+                        <!--<td><input value="100"></td>-->
+                        <!--<td><input value="100"></td>-->
+                    </tr>
+                    <tr>
+                        <td rowspan="2">绩命中率指标</td>
+                        <td>考核期绩命中率指标计划数</td>
+                        <td><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <!--<td>绩命中率指标</td>-->
+                        <td>考核期绩命中率指标实际完成数</td>
+                        <td><input value="100"></td>
+                        <!--<td><input value="100"></td>-->
+                        <!--<td><input value="100"></td>-->
+                    </tr>
+                    <tr>
+                        <td rowspan="2">渠道开发</td>
+                        <td>考核期渠道开发计划数</td>
+                        <td><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                        <td rowspan="2"><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <!--<td>渠道开发</td>-->
+                        <td>考核期渠道开发计划数</td>
+                        <td><input value="100"></td>
+                        <!--<td><input value="100"></td>-->
+                        <!--<td><input value="100"></td>-->
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!--/block-->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">其它考核 (权重: <input class="input-mini focused" value="100">%)</div>
+                <div class="pull-right"><span class="badge badge-important">必填</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <table class="table table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>#考核指标</td>
+                        <td>指标解释</td>
+                        <td><input value="权重(%)"></td>
+                        <td>单项考核指标得分(百分制)</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>工作品质</td>
+                        <td>工作是否取得预计成果,是否完成预期的目标要求</td>
+                        <td><input value="35"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <td>工作效率</td>
+                        <td>工作是否能在要求内完成工作,是否符合进度要求</td>
+                        <td><input value="35"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <td>工作态度</td>
+                        <td>是否严格遵守公司制度和工作规定,有较强的自觉性、纪纪律性</td>
+                        <td><input value="20"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    <tr>
+                        <td>工作创新性</td>
+                        <td>是否改进完善现有的工作流程，是否提出创新性的工作思路和方法</td>
+                        <td><input value="10"></td>
+                        <td><input value="100"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/block-->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">主管&自我评论</div>
+                <div class="pull-right"><span class="badge badge-important">必填</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <div>
+                    <p>主管评论</p>
+                    <textarea class="comment" id="leaderComment" placeholder="请输入内容..."></textarea>
+                    <div>
+                        <span class="offset8 span2">签字: <input id="leaderCommentSign"></span>
+                        <span class="span2">日期: <input id="leaderCommentSignDate"></span>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <div>
+                    <p>员工评论</p>
+                    <textarea id="staffComment" placeholder="请输入内容..."></textarea>
+                    <div>
+                        <span class="offset8 span2">签字: <input id="staffCommentSign"></span>
+                        <span class="span2">日期: <input id="staffCommentSignDate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/block-->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">主管&HR奖惩意见</div>
+                <div class="pull-right"><span class="badge badge-warning">选填</span>
+
+                </div>
+            </div>
+            <div class="block-content collapse in">
+                <div>
+                    <p>主管奖惩意见</p>
+                    <textarea id="leaderReward_Punish" placeholder="请输入内容..."></textarea>
+                    <div>
+                        <span class="offset8 span2">签字: <input id="leaderReward_PunishSign"></span>
+                        <span class="span2">日期: <input id="leaderReward_PunishSignDate"></span>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <div>
+                    <p>HR奖惩意见</p>
+                    <textarea id="hrReward_Punish" placeholder="请输入内容..."></textarea>
+                    <div>
+                        <span class="offset8 span2">签字: <input id="hrReward_PunishSign"></span>
+                        <span class="span2">日期: <input id="hrReward_PunishSignDate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/block-->
+        <!--block-->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">流转纪录</div>
+            </div>
+            <div class="block-content collapse in">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>流转节点</td>
+                        <td>操作人</td>
+                        <td>操作意见</td>
+                        <td>时间</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>HR评级</td>
+                        <td>Bob</td>
+                        <td>同意</td>
+                        <td>2017年1月20日15:48:48</td>
+                    </tr>
+                    <tr>
+                        <td>主管评分</td>
+                        <td>Bob</td>
+                        <td>同意</td>
+                        <td>2017年1月20日15:48:48</td>
+                    </tr>
+                    <tr>
+                        <td>员工填写</td>
+                        <td>Bob</td>
+                        <td>同意</td>
+                        <td>2017年1月20日15:48:48</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/block-->
+        <div class="block text-center">
+            <button class="btn btn-primary" id="back">退回</button>
+            <button class="btn btn-primary" id="save">保存</button>
+            <button class="btn btn-primary" id="submit">提交</button>
+        </div>
+
+    </div>
+    <hr>
+    <footer class="text-center">
+        <p>&copy; Yiran 2017</p>
+        <p>Powered by : Spring Boot</p>
+    </footer>
+</div>
+<!--/.fluid-container-->
+<script src="../../static/vendors/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+<script src="../../static/vendors/jquery-1.9.1.min.js"></script>
+<script src="../../static/vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+<script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../static/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+
+<script src="../../static/assets/scripts.js"></script>
+<script src="../../static/assets/evaluation.js"></script>
+</body>
+</html>

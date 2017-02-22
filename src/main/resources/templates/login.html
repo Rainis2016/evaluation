@@ -10,17 +10,19 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="../static/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="../static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   </head>
   <body id="login">
     <div class="container">
 
-      <form class="form-signin" th:action="@{/home}" action="/home" method="post">
+      <form class="form-signin" th:action="@{/login}" action="home" method="post">
+        <p th:if="${param.logout}" class="alert">You have been logged out</p>
+        <p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Username" name="username">
-        <input type="password" class="input-block-level" placeholder="Password" name="password">
+        <input type="text" class="input-block-level" placeholder='WorkCode' name='username'>
+        <input type="password" class="input-block-level" placeholder="Password" name='password'>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me" name="remember-me"> Remember me
         </label>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>

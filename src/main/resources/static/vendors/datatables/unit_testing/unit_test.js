@@ -93,7 +93,7 @@ var oTest = {
 	
 	/*
 	 * Function: fnComplete
-	 * Purpose:  Tell the controller that we are all done here
+	 * Purpose:  Tell the controllers that we are all done here
 	 * Returns:  -
 	 * Inputs:   -
 	 */

@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class BusinessEx extends BaseModel{
-    private Long weight;
     private Long col_1_1;
     private Long col_1_1_1;
     private Long col_1_2;
